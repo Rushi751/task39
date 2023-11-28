@@ -8,7 +8,6 @@ const port = 3000;
 
 const folderPath = path.join(__dirname, 'textFiles');
 
-// Ensure the folder exists
 if (!fs.existsSync(folderPath)) {
   fs.mkdirSync(folderPath);
 }
@@ -28,7 +27,7 @@ app.post('/createFile', (req, res) => {
   });
 });
 
-// API endpoint to retrieve all text files in the folder
+
 app.get('/getTextFiles', (req, res) => {
   fs.readdir(folderPath, (err, files) => {
     if (err) {
